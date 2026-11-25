@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Kozy Stay · How to get here (Wangsimni / Haengdang)">
+<meta property="og:title" content="Kozy Stay · How to get here">
+<meta property="og:description" content="Wangsimni Station Exit 10 (flat) · Haengdang Station Exit 2 (uphill)">
+<meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<title>Kozy Stay · How to get here</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b4532f'/%3E%3Cpath d='M14 34 32 18l18 16v14H38V38H26v10H14z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg:#f6f3ee; --card:#ffffff; --ink:#1e1c19; --sub:#625c53; --line:#e3ddd3; --chip:#efe9df;
+    --accent:#b4532f; --accent-ink:#ffffff; --tint:#f8ebe4;
+    --ok:#2f7a55; --ok-bg:#e2f1e8; --warn:#b26a10; --warn-bg:#f8ead3;
+    --font: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#141311; --card:#1e1d1a; --ink:#efebe4; --sub:#aaa398; --line:#36332e; --chip:#2a2824;
+      --accent:#e2825c; --accent-ink:#1a1310; --tint:#33241d;
+      --ok:#7cc4a0; --ok-bg:#1d3127; --warn:#e3a95c; --warn-bg:#3a2c17;
+    }
+  }
+  * { box-sizing:border-box }
+  html { -webkit-text-size-adjust:100% }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 var(--font) }
+  :lang(zh) { font-family: system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif }
+  :lang(ja) { font-family: system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo","Noto Sans JP",sans-serif }
+  :lang(ko) { font-family: system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif; word-break:keep-all }
+  .wrap { max-width:600px; margin:0 auto; padding:0 16px }
+
+  .top { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--line) }
+  @supports (backdrop-filter: blur(8px)) { .top { background:color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter:saturate(1.4) blur(10px) } }
+  .top-in { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px 10px; min-height:56px; padding-top:6px; padding-bottom:6px }
+  @media (max-width:460px) { .brand span { display:none } .langs button { padding:7px 8px } }
+  .brand { white-space:nowrap }
+  .brand b { font-size:17px }
+  .brand span { margin-left:6px; color:var(--sub); font-size:13px }
+  .langs { display:flex; background:var(--chip); border-radius:999px; padding:3px; flex:none }
+  .langs button { border:0; background:transparent; color:var(--sub); font:inherit; font-size:13px; line-height:1.2; padding:7px 9px; border-radius:999px; cursor:pointer; white-space:nowrap }
+  .langs button[aria-pressed="true"] { background:var(--card); color:var(--ink); font-weight:700; box-shadow:0 1px 2px rgba(0,0,0,.14) }
+  .langs button:focus-visible, .btn:focus-visible, .route:focus-visible, .switch:focus-visible { outline:2px solid var(--accent); outline-offset:2px }
+
+  h1 { font-size:26px; line-height:1.25; margin:22px 0 6px }
+  .lead { color:var(--sub); margin:0 0 16px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px }
+
+  .addr .label { font-size:13px; color:var(--sub); margin-bottom:6px }
+  .ko-addr { font-size:23px; font-weight:800; line-height:1.35; user-select:all; -webkit-user-select:all }
+  .ko-hint { font-size:15px; margin-top:4px }
+  .roman { font-size:13px; color:var(--sub); margin-top:4px }
+  html[lang="ko"] .roman, html[lang="ko"] .r-ko { display:none }
+  .btns { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px }
+  .btn { display:flex; align-items:center; justify-content:center; min-height:46px; padding:8px 10px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-size:14px; font-weight:700; text-decoration:none; text-align:center; cursor:pointer }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink) }
+  .tip { font-size:13.5px; color:var(--sub); margin:12px 0 0 }
+
+  h2 { font-size:19px; margin:28px 0 10px; scroll-margin-top:70px }
+  .routes { display:grid; grid-template-columns:1fr 1fr; gap:10px }
+  @media (max-width:540px) { .routes { grid-template-columns:1fr } }
+  .route { appearance:none; text-align:left; font:inherit; color:inherit; display:flex; flex-direction:column; gap:3px; padding:14px; border-radius:16px; border:1.5px solid var(--line); background:var(--card); cursor:pointer }
+  .route.on { border-color:var(--accent); background:var(--tint) }
+  .route .num { font-size:15px; font-weight:800; color:var(--accent) }
+  .r-name { font-weight:800; font-size:17px; line-height:1.3 }
+  .r-ko { font-size:13px; color:var(--sub) }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px }
+  .chip { font-size:13px; padding:2px 9px; border-radius:999px; background:var(--chip) }
+  .chip.ok { background:var(--ok-bg) }
+  .chip.warn { background:var(--warn-bg) }
+  .chip.ok::before, .chip.warn::before { content:""; display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px; vertical-align:1px }
+  .chip.ok::before { background:var(--ok) }
+  .chip.warn::before { background:var(--warn) }
+  .r-note { font-size:13.5px; margin-top:4px }
+  .r-lines { font-size:12.5px; color:var(--sub) }
+
+  .sv-note { font-size:13.5px; color:var(--sub); border:1px dashed var(--line); border-radius:12px; padding:10px 12px; margin:16px 0 0 }
+  .steps { list-style:none; margin:16px 0 0; padding:0 }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin:0 0 14px }
+  .step-h { display:flex; gap:10px; align-items:flex-start; padding:12px 14px }
+  .badge { flex:none; min-width:30px; height:30px; padding:0 8px; border-radius:15px; background:var(--accent); color:var(--accent-ink); font-weight:800; font-size:14px; display:inline-flex; align-items:center; justify-content:center }
+  .cap { margin:2px 0 0; font-size:16px; line-height:1.5 }
+  .other { margin:4px 0 0; font-size:13px; color:var(--sub) }
+  .ph { display:block; position:relative; border-top:1px solid var(--line) }
+  .ph img { display:block; width:100%; height:auto; background:var(--chip) }
+  .pn { position:absolute; left:10px; top:10px; background:rgba(0,0,0,.62); color:#fff; font-size:12px; font-weight:700; padding:2px 8px; border-radius:999px }
+  .arrive-title { font-weight:800; font-size:18px }
+  .arrive p { margin:4px 0 0 }
+  .sub { color:var(--sub); font-size:14px }
+  .switch { display:block; width:100%; margin:12px 0 0; min-height:48px; border-radius:12px; border:1px solid var(--line); background:transparent; color:var(--ink); font:inherit; font-weight:700; cursor:pointer }
+  footer { margin:28px 0 48px; color:var(--sub); font-size:13px }
+  footer p { margin:4px 0 }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand"><b>Kozy Stay</b><span lang="ko">코지스테이</span></div>
+    <nav class="langs" aria-label="Language">
+      <button type="button" data-lang="en" lang="en">EN</button>
+      <button type="button" data-lang="zh" lang="zh-Hans">中文</button>
+      <button type="button" data-lang="ja" lang="ja">日本語</button>
+      <button type="button" data-lang="ko" lang="ko">한국어</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 data-t="title">How to get to Kozy Stay</h1>
+  <p class="lead" data-t="lead"></p>
+
+  <section class="addr card" aria-labelledby="addr-label">
+    <div class="label" id="addr-label" data-t="addrLabel"></div>
+    <div class="ko-addr" lang="ko">서울시 성동구 왕십리로 21길 41-6</div>
+    <div class="ko-hint" lang="ko">가위소리미용실 옆 골목 안 철대문 · 우편번호 04714</div>
+    <div class="roman" lang="en">41-6 Wangsimni-ro 21-gil, Seongdong-gu, Seoul 04714</div>
+    <div class="btns">
+      <button type="button" class="btn primary" id="copy"><span data-t="copy"></span></button>
+      <a class="btn" href="https://naver.me/FgTySkRR" target="_blank" rel="noopener" data-t="naver"></a>
+      <a class="btn" href="https://map.kakao.com/link/to/Kozy%20Stay,37.559595,127.030555" target="_blank" rel="noopener" data-t="kakao"></a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=37.559595,127.030555" target="_blank" rel="noopener" data-t="google"></a>
+    </div>
+    <p class="tip" data-t="tip"></p>
+  </section>
+
+  <h2 id="choose" data-t="choose"></h2>
+  <div class="routes" role="tablist">
+    <button type="button" class="route" role="tab" data-route="w" aria-controls="panel">
+      <span class="num">①</span>
+      <span class="r-name" data-t="r1name"></span>
+      <span class="r-ko" lang="ko">왕십리역 10번 출구</span>
+      <span class="chips"><span class="chip" data-t="r1time"></span><span class="chip ok" data-t="r1terrain"></span></span>
+      <span class="r-note" data-t="r1note"></span>
+      <span class="r-lines" data-t="r1lines"></span>
+    </button>
+    <button type="button" class="route" role="tab" data-route="h" aria-controls="panel">
+      <span class="num">②</span>
+      <span class="r-name" data-t="r2name"></span>
+      <span class="r-ko" lang="ko">행당역 2번 출구</span>
+      <span class="chips"><span class="chip" data-t="r2time"></span><span class="chip warn" data-t="r2terrain"></span></span>
+      <span class="r-note" data-t="r2note"></span>
+      <span class="r-lines" data-t="r2lines"></span>
+    </button>
+  </div>
+
+  <section id="panel" role="tabpanel">
+    <p class="sv-note" id="svnote" data-t="svNote" hidden></p>
+    <ol class="steps" id="steps"></ol>
+    <div class="arrive card">
+      <div class="arrive-title" data-t="arriveTitle"></div>
+      <p data-t="arriveText"></p>
+      <p class="sub" data-t="arriveCodes"></p>
+    </div>
+    <button type="button" class="switch" id="switch" data-t="switch"></button>
+  </section>
+
+  <footer>
+    <p data-t="help"></p>
+    <p data-t="credit"></p>
+  </footer>
+  <noscript><p>Please turn on JavaScript to see the step-by-step photos.</p></noscript>
+</main>
+
+<script>
+const ADDR_KO = "서울시 성동구 왕십리로 21길 41-6";
+const HTML_LANG = { en: "en", zh: "zh-Hans", ja: "ja", ko: "ko" };
+
+const T = {
+  en: {
+    docTitle: "Kozy Stay · How to get here",
+    title: "How to get to Kozy Stay",
+    lead: "There are two ways from the subway. Pick the station you're coming from.",
+    addrLabel: "Address in Korean (show this to taxi drivers)",
+    copy: "Copy address", copied: "Copied!",
+    naver: "Naver Map", kakao: "KakaoMap", google: "Google Maps",
+    tip: "Google Maps can't give walking directions in Korea. Use Naver Map or KakaoMap, or just follow the photos below.",
+    choose: "Which station are you coming from?",
+    r1name: "Wangsimni Station, Exit 10", r1time: "About 7 min walk", r1terrain: "Flat",
+    r1note: "Best if you have big luggage", r1lines: "Line 2 · Line 5 · Gyeongui–Jungang · Suin–Bundang",
+    r2name: "Haengdang Station, Exit 2", r2time: "About 5–6 min · 380 m", r2terrain: "Uphill",
+    r2note: "Hard with big suitcases", r2lines: "Line 5",
+    svNote: "Photos 1–10 are from Google Street View (2015–2018), so Mega Coffee and GS25 aren't in them yet.",
+    arriveTitle: "You're here!",
+    arriveText: "The steel gate at the end of the alley is Kozy Stay.",
+    arriveCodes: "Door codes and check-in steps are sent by Airbnb message on your check-in day.",
+    switch: "Coming from the other station? See the other route ↑",
+    help: "Questions? Message us on Airbnb anytime.",
+    credit: "Photos: Kozy Stay · Route ② photos 1–10: Google Street View (© Google)",
+    stepAlt: "Step {n}",
+    otherDir: "(This photo was taken from the opposite direction.)"
+  },
+  zh: {
+    docTitle: "Kozy Stay · 交通指南",
+    title: "如何前往 Kozy Stay",
+    lead: "从地铁站过来有两条路线，请选择你下车的车站。",
+    addrLabel: "韩文地址（可直接出示给出租车司机）",
+    copy: "复制地址", copied: "已复制！",
+    naver: "Naver 地图", kakao: "Kakao 地图", google: "谷歌地图",
+    tip: "谷歌地图在韩国无法步行导航。请使用 Naver 地图或 Kakao 地图，或按照下方照片步行。",
+    choose: "你从哪个车站过来？",
+    r1name: "往十里站 10号出口", r1time: "步行约7分钟", r1terrain: "平路",
+    r1note: "行李多时推荐", r1lines: "2号线 · 5号线 · 京义中央线 · 水仁盆唐线",
+    r2name: "杏堂站 2号出口", r2time: "约5–6分钟 · 380米", r2terrain: "上坡",
+    r2note: "带大行李箱较吃力", r2lines: "5号线",
+    svNote: "第1–10张照片来自谷歌街景（2015–2018年），当时还没有 Mega Coffee 和 GS25。",
+    arriveTitle: "到啦！",
+    arriveText: "巷子尽头的铁门就是 Kozy Stay。",
+    arriveCodes: "门锁密码和入住方法会在入住当天通过 Airbnb 消息发送给你。",
+    switch: "从另一个车站过来？查看另一条路线 ↑",
+    help: "有任何问题，请随时通过 Airbnb 消息联系我们。",
+    credit: "照片：Kozy Stay · 路线②第1–10张：谷歌街景（© Google）",
+    stepAlt: "第{n}步",
+    otherDir: "（此照片是从反方向拍摄的）"
+  },
+  ja: {
+    docTitle: "Kozy Stay · アクセス",
+    title: "Kozy Stay への行き方",
+    lead: "地下鉄の駅からの道は2通りあります。降りる駅を選んでください。",
+    addrLabel: "韓国語の住所（タクシーではこの画面を見せてください）",
+    copy: "住所をコピー", copied: "コピーしました",
+    naver: "NAVERマップ", kakao: "カカオマップ", google: "Googleマップ",
+    tip: "韓国ではGoogleマップの徒歩ナビが使えません。NAVERマップかカカオマップを使うか、下の写真のとおりに歩いてください。",
+    choose: "どの駅から来ますか？",
+    r1name: "往十里（ワンシムニ）駅 10番出口", r1time: "徒歩約7分", r1terrain: "平坦",
+    r1note: "荷物が多い方におすすめ", r1lines: "2号線・5号線・京義中央線・水仁盆唐線",
+    r2name: "杏堂（ヘンダン）駅 2番出口", r2time: "約5〜6分・380m", r2terrain: "上り坂あり",
+    r2note: "大きなスーツケースは大変です", r2lines: "5号線",
+    svNote: "写真1〜10はGoogleストリートビュー（2015〜2018年）のため、メガコーヒーとGS25はまだ写っていません。",
+    arriveTitle: "到着です！",
+    arriveText: "路地の突き当たりにある鉄の門が Kozy Stay です。",
+    arriveCodes: "ドアの暗証番号とチェックイン方法は、チェックイン当日にAirbnbのメッセージでお送りします。",
+    switch: "もう一方の駅から来る場合は、別のルートを見る ↑",
+    help: "ご不明な点は、いつでもAirbnbのメッセージでお問い合わせください。",
+    credit: "写真：Kozy Stay・ルート②の1〜10：Googleストリートビュー（© Google）",
+    stepAlt: "ステップ{n}",
+    otherDir: "（写真は反対方向から撮影したものです）"
+  },
+  ko: {
+    docTitle: "코지스테이 · 찾아오는 길",
+    title: "코지스테이 찾아오는 길",
+    lead: "지하철역에서 오는 길은 두 가지입니다. 내리는 역을 고르세요.",
+    addrLabel: "주소 (택시 기사님께 그대로 보여 주세요)",
+    copy: "주소 복사", copied: "복사했어요",
+    naver: "네이버 지도", kakao: "카카오맵", google: "구글 지도",
+    tip: "구글 지도는 한국에서 도보 길찾기가 안 됩니다. 네이버 지도나 카카오맵을 쓰거나 아래 사진을 따라오세요.",
+    choose: "어느 역에서 오세요?",
+    r1name: "왕십리역 10번 출구", r1time: "걸어서 약 7분", r1terrain: "평지",
+    r1note: "짐이 많으면 추천", r1lines: "2호선 · 5호선 · 경의중앙선 · 수인분당선",
+    r2name: "행당역 2번 출구", r2time: "약 5~6분 · 380m", r2terrain: "오르막",
+    r2note: "큰 캐리어는 힘들어요", r2lines: "5호선",
+    svNote: "1~10번 사진은 구글 거리뷰(2015~2018년)라 메가커피와 GS25가 아직 없습니다.",
+    arriveTitle: "도착!",
+    arriveText: "골목 끝 철대문이 코지스테이입니다.",
+    arriveCodes: "출입 비밀번호와 체크인 방법은 체크인 당일 에어비앤비 메시지로 보내 드립니다.",
+    switch: "다른 역에서 오시나요? 다른 길 보기 ↑",
+    help: "궁금한 점은 언제든 에어비앤비 메시지로 물어보세요.",
+    credit: "사진: 코지스테이 · ②의 1~10번: 구글 거리뷰 (© Google)",
+    stepAlt: "{n}단계",
+    otherDir: "(사진은 반대 방향에서 찍은 것입니다)"
+  }
+};
+
+const w = (a, b) => { const r = []; for (let i = a; i <= (b || a); i++) r.push(["w" + String(i).padStart(2, "0"), i]); return r; };
+const h = (i) => [["h" + String(i).padStart(2, "0"), i]];
+
+const ROUTES = {
+  w: [
+    { n: "1", img: w(1), t: {
+      en: "Come out of Wangsimni Station Exit 10.",
+      zh: "从往十里站10号出口出来。",
+      ja: "往十里駅の10番出口から出ます。",
+      ko: "왕십리역 10번 출구로 나옵니다." } },
+    { n: "2", img: w(2), t: {
+      en: "At the top of the exit, turn right and go back around.",
+      zh: "出口上来后向右转，绕到出口后面。",
+      ja: "出口を上がったら右に曲がり、出口の裏側へ回ります。",
+      ko: "출구를 올라와 오른쪽으로 돌아 출구 뒤쪽으로 갑니다." } },
+    { n: "3", img: w(3), t: {
+      en: "Turn left past the yellow lockers and bike racks.",
+      zh: "经过黄色储物柜和自行车停放处后向左转。",
+      ja: "黄色いロッカーと駐輪場を過ぎて左に曲がります。",
+      ko: "노란 물품보관함과 자전거 거치대를 지나 왼쪽으로 갑니다." } },
+    { n: "4", img: w(4), t: {
+      en: "Walk straight along the path with the painted mural wall.",
+      zh: "沿着有彩色壁画墙的小路直走。",
+      ja: "壁画が描かれた壁沿いの道をまっすぐ進みます。",
+      ko: "벽화가 그려진 길을 따라 쭉 걸어갑니다." } },
+    { n: "5", img: w(5), t: {
+      en: "At the road, turn right.",
+      zh: "走到马路后向右转。",
+      ja: "車道に出たら右に曲がります。",
+      ko: "차도가 나오면 오른쪽으로 갑니다." } },
+    { n: "6–7", img: w(6, 7), t: {
+      en: "Go straight (Playground Coffee will be on your left).",
+      zh: "一直往前走（左边是 Playground Coffee）。",
+      ja: "まっすぐ進みます（左手に Playground Coffee）。",
+      ko: "쭉 직진합니다 (왼쪽에 Playground Coffee)." } },
+    { n: "8", img: w(8), t: {
+      en: "At the corner, turn left onto the green-painted street.",
+      zh: "在路口向左转，走进路面涂成绿色的街道。",
+      ja: "角を左に曲がり、路面が緑色の道に入ります。",
+      ko: "모퉁이에서 왼쪽, 바닥이 초록색인 길로 들어갑니다." } },
+    { n: "9–12", img: w(9, 12), t: {
+      en: "Keep going straight along the green street with shops and restaurants.",
+      zh: "沿着两旁有商店和餐厅的绿色街道一直走。",
+      ja: "お店や飲食店が並ぶ緑色の道をまっすぐ進みます。",
+      ko: "가게와 식당이 늘어선 초록색 길을 따라 계속 직진합니다." } },
+    { n: "13", img: w(13), t: {
+      en: "Cross the intersection and keep going straight.",
+      zh: "穿过十字路口，继续直走。",
+      ja: "交差点を渡り、そのまままっすぐ進みます。",
+      ko: "교차로를 건너 계속 직진합니다." } },
+    { n: "14–15", img: w(14, 15), t: {
+      en: "Keep straight (Wangsimni Kyunghee Korean Medicine Clinic, 왕십리경희한의원, on your right).",
+      zh: "继续直走（右边是韩医院「왕십리경희한의원」）。",
+      ja: "そのまま直進します（右手に韓方医院「왕십리경희한의원」）。",
+      ko: "계속 직진합니다 (오른쪽에 왕십리경희한의원)." } },
+    { n: "16–18", img: w(16, 18), t: {
+      en: "Continue straight along the quiet residential road.",
+      zh: "沿着安静的住宅区小路继续直走。",
+      ja: "静かな住宅街の道をそのまま進みます。",
+      ko: "조용한 주택가 길을 따라 계속 직진합니다." } },
+    { n: "19", img: w(19), t: {
+      en: "Turn left just before the hair salon with the black-and-white checked window (가위소리).",
+      zh: "在黑白格子窗的美发店（가위소리）前面向左转。",
+      ja: "黒と白のチェック柄の窓の美容室（가위소리）の手前で左に曲がります。",
+      ko: "검정·흰색 체크무늬 창이 있는 미용실(가위소리) 바로 앞에서 왼쪽으로 꺾습니다." } },
+    { n: "20", img: w(20), t: {
+      en: "Walk into the narrow alley — the Kozy Stay gate is at the end (⭐).",
+      zh: "走进窄巷，尽头的大门就是 Kozy Stay（⭐）。",
+      ja: "細い路地に入ると、突き当たりの門が Kozy Stay です（⭐）。",
+      ko: "좁은 골목으로 들어가면 끝에 있는 대문이 코지스테이입니다 (⭐)." } }
+  ],
+  h: [
+    { n: "1", img: h(1), t: {
+      en: "Come out of Exit 2 and walk straight along the main road.",
+      zh: "从2号出口出来，沿着大路直走。",
+      ja: "2番出口を出て、大通り沿いにまっすぐ進みます。",
+      ko: "2번 출구로 나와 큰길을 따라 직진합니다." } },
+    { n: "2", img: h(2), t: {
+      en: "Keep going straight for about 170 m (2 min).",
+      zh: "继续直走约170米（约2分钟）。",
+      ja: "そのまま約170m（2分ほど）直進します。",
+      ko: "약 170m(2분) 계속 직진합니다." } },
+    { n: "3", img: h(3), t: {
+      en: "Turn left at Mega Coffee (메가커피) onto the uphill street.",
+      zh: "在 Mega Coffee（메가커피）向左转，走上坡路。",
+      ja: "メガコーヒー（메가커피）の角を左に曲がり、上り坂に入ります。",
+      ko: "메가커피에서 왼쪽 오르막길로 들어갑니다." } },
+    { n: "4", img: h(4), t: {
+      en: "Walk up the hill.",
+      zh: "沿着坡道往上走。",
+      ja: "坂を上ります。",
+      ko: "언덕을 올라갑니다." } },
+    { n: "5", img: h(5), t: {
+      en: "Keep going up — this is the steep part.",
+      zh: "继续往上走，这一段最陡。",
+      ja: "さらに上ります。ここが一番急な区間です。",
+      ko: "계속 올라갑니다. 가장 가파른 구간입니다." } },
+    { n: "6", img: h(6), t: {
+      en: "At the top, the road bends left and goes downhill.",
+      zh: "到了坡顶，道路向左弯，开始下坡。",
+      ja: "坂の上で道が左に曲がり、下り坂になります。",
+      ko: "꼭대기에서 길이 왼쪽으로 꺾이며 내리막이 됩니다." } },
+    { n: "7", img: h(7), t: {
+      en: "Go down to the bottom.",
+      zh: "一直走到坡底。",
+      ja: "坂の下まで下ります。",
+      ko: "내리막 끝까지 내려갑니다." } },
+    { n: "8", img: h(8), t: {
+      en: "You'll see a GS25 convenience store in front of you. Turn right here.",
+      zh: "正前方会看到 GS25 便利店，在这里向右转。",
+      ja: "正面にコンビニの GS25 が見えたら、右に曲がります。",
+      ko: "정면에 GS25 편의점이 보이면 오른쪽으로 갑니다." } },
+    { n: "9", img: h(9), t: {
+      en: "Go straight, past the 한양세탁 laundry on your right.",
+      zh: "直走，经过右边的洗衣店「한양세탁」。",
+      ja: "まっすぐ進み、右手のクリーニング店「한양세탁」を通り過ぎます。",
+      ko: "쭉 직진해 오른쪽 한양세탁을 지나갑니다." } },
+    { n: "10", img: h(10), t: {
+      en: "Keep going — our gate is between the 가위소리 hair salon and the 미래쉐르빌 building (circled).",
+      zh: "继续往前，美发店「가위소리」和「미래쉐르빌」大楼之间就是入口（圆圈处）。",
+      ja: "さらに進むと、美容室「가위소리」と建物「미래쉐르빌」の間が入口です（丸印）。",
+      ko: "조금 더 가면 가위소리미용실과 미래쉐르빌 사이가 입구입니다 (동그라미)." } },
+    { n: "11", img: [["w19", 11]], other: true, t: {
+      en: "Right after the hair salon (black-and-white checked window), turn right into the narrow alley.",
+      zh: "过了美发店（黑白格子窗）马上向右转，进入窄巷。",
+      ja: "美容室（黒と白のチェック柄の窓）を過ぎてすぐ右に曲がり、細い路地に入ります。",
+      ko: "미용실(검정·흰색 체크무늬 창)을 지나자마자 오른쪽 좁은 골목으로 들어갑니다." } },
+    { n: "12", img: [["w20", 12]], t: {
+      en: "The Kozy Stay steel gate is at the end of the alley (⭐).",
+      zh: "巷子尽头的铁门就是 Kozy Stay（⭐）。",
+      ja: "路地の突き当たりの鉄の門が Kozy Stay です（⭐）。",
+      ko: "골목 끝 철대문이 코지스테이입니다 (⭐)." } }
+  ]
+};
+
+const SIZE = (f) => f[0] === "h" ? [960, 480] : (f === "w20" ? [960, 850] : [960, 720]);
+const $ = (s) => document.querySelector(s);
+
+function detectLang() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q && T[q]) return q;
+  try { const s = localStorage.getItem("ks-lang"); if (s && T[s]) return s; } catch (e) {}
+  const n = ((navigator.languages && navigator.languages[0]) || navigator.language || "en").toLowerCase();
+  if (n.startsWith("zh")) return "zh";
+  if (n.startsWith("ja")) return "ja";
+  if (n.startsWith("ko")) return "ko";
+  return "en";
+}
+
+let lang = detectLang();
+let route = location.hash === "#haengdang" ? "h" : "w";
+const t = (k) => (T[lang] && T[lang][k]) || T.en[k] || "";
+
+function renderSteps() {
+  document.querySelectorAll(".route").forEach((b) => {
+    const on = b.dataset.route === route;
+    b.classList.toggle("on", on);
+    b.setAttribute("aria-selected", on ? "true" : "false");
+  });
+  $("#svnote").hidden = route !== "h";
+  const ol = $("#steps");
+  ol.textContent = "";
+  ROUTES[route].forEach((s) => {
+    const li = document.createElement("li");
+    li.className = "step";
+    const head = document.createElement("div");
+    head.className = "step-h";
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = s.n;
+    const txt = document.createElement("div");
+    const cap = document.createElement("p");
+    cap.className = "cap";
+    cap.textContent = s.t[lang] || s.t.en;
+    txt.appendChild(cap);
+    if (s.other) {
+      const o = document.createElement("p");
+      o.className = "other";
+      o.textContent = t("otherDir");
+      txt.appendChild(o);
+    }
+    head.append(badge, txt);
+    li.appendChild(head);
+    s.img.forEach(([f, no]) => {
+      const a = document.createElement("a");
+      a.className = "ph";
+      a.href = "img/" + f + ".jpg";
+      a.target = "_blank";
+      a.rel = "noopener";
+      const im = document.createElement("img");
+      const [iw, ih] = SIZE(f);
+      im.width = iw; im.height = ih;
+      im.loading = "lazy"; im.decoding = "async";
+      im.alt = t("stepAlt").replace("{n}", no);
+      im.src = "img/" + f + ".jpg";
+      a.appendChild(im);
+      if (s.img.length > 1) {
+        const k = document.createElement("span");
+        k.className = "pn";
+        k.textContent = no;
+        a.appendChild(k);
+      }
+      li.appendChild(a);
+    });
+    ol.appendChild(li);
+  });
+}
+
+function applyLang() {
+  document.documentElement.lang = HTML_LANG[lang];
+  document.title = t("docTitle");
+  document.querySelectorAll("[data-t]").forEach((el) => { el.textContent = t(el.dataset.t); });
+  document.querySelectorAll(".langs button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"));
+  renderSteps();
+}
+
+document.querySelectorAll(".langs button").forEach((b) => b.addEventListener("click", () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem("ks-lang", lang); } catch (e) {}
+  applyLang();
+}));
+
+function setRoute(r) {
+  route = r;
+  try { history.replaceState(null, "", location.pathname + location.search + (r === "h" ? "#haengdang" : "#wangsimni")); } catch (e) {}
+  renderSteps();
+}
+document.querySelectorAll(".route").forEach((b) => b.addEventListener("click", () => setRoute(b.dataset.route)));
+$("#switch").addEventListener("click", () => {
+  setRoute(route === "w" ? "h" : "w");
+  $("#choose").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+window.addEventListener("hashchange", () => setRoute(location.hash === "#haengdang" ? "h" : "w"));
+
+$("#copy").addEventListener("click", async () => {
+  let ok = false;
+  try { await navigator.clipboard.writeText(ADDR_KO); ok = true; } catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = ADDR_KO; ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+    document.body.appendChild(ta); ta.select();
+    try { ok = document.execCommand("copy"); } catch (_) {}
+    ta.remove();
+  }
+  const span = $("#copy span");
+  span.textContent = ok ? t("copied") : t("copy");
+  if (ok) setTimeout(() => { span.textContent = t("copy"); }, 1800);
+});
+
+applyLang();
+</script>
+</body>
+</html>

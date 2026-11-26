@@ -191,7 +191,7 @@ const T = {
     help: "Questions? Message us on Airbnb anytime.",
     credit: "Photos: Kozy Stay · Route ② photos 1–10: Google Street View (© Google)",
     stepAlt: "Step {n}",
-    otherDir: "(This photo was taken from the opposite direction.)"
+    otherDir: "(This photo faces the other way, so the salon is on the left here. Coming from Haengdang, it's on your right.)"
   },
   zh: {
     docTitle: "Kozy Stay · 交通指南",
@@ -214,7 +214,7 @@ const T = {
     help: "有任何问题，请随时通过 Airbnb 消息联系我们。",
     credit: "照片：Kozy Stay · 路线②第1–10张：谷歌街景（© Google）",
     stepAlt: "第{n}步",
-    otherDir: "（此照片是从反方向拍摄的）"
+    otherDir: "（这张照片是从反方向拍的，所以美发店在照片左边；从杏堂站过来时，它在你的右边。）"
   },
   ja: {
     docTitle: "Kozy Stay · アクセス",
@@ -237,7 +237,7 @@ const T = {
     help: "ご不明な点は、いつでもAirbnbのメッセージでお問い合わせください。",
     credit: "写真：Kozy Stay・ルート②の1〜10：Googleストリートビュー（© Google）",
     stepAlt: "ステップ{n}",
-    otherDir: "（写真は反対方向から撮影したものです）"
+    otherDir: "（この写真は反対方向から撮ったので、美容室が左に写っています。杏堂駅から来ると右側です）"
   },
   ko: {
     docTitle: "코지스테이 · 찾아오는 길",
@@ -260,7 +260,7 @@ const T = {
     help: "궁금한 점은 언제든 에어비앤비 메시지로 물어보세요.",
     credit: "사진: 코지스테이 · ②의 1~10번: 구글 거리뷰 (© Google)",
     stepAlt: "{n}단계",
-    otherDir: "(사진은 반대 방향에서 찍은 것입니다)"
+    otherDir: "(이 사진은 반대 방향에서 찍어서 미용실이 왼쪽에 보여요. 행당역에서 오면 오른쪽에 있습니다)"
   }
 };
 
@@ -350,7 +350,11 @@ const ROUTES = {
       en: "Turn left at Mega Coffee (메가커피) onto the uphill street.",
       zh: "在 Mega Coffee（메가커피）向左转，走上坡路。",
       ja: "メガコーヒー（메가커피）の角を左に曲がり、上り坂に入ります。",
-      ko: "메가커피에서 왼쪽 오르막길로 들어갑니다." } },
+      ko: "메가커피에서 왼쪽 오르막길로 들어갑니다." }, note: {
+      en: "(Mega Coffee opened after this photo was taken.)",
+      zh: "（拍这张照片时还没有 Mega Coffee。）",
+      ja: "（この写真の撮影時、メガコーヒーはまだありませんでした）",
+      ko: "(이 사진을 찍을 땐 메가커피가 아직 없었어요)" } },
     { n: "4", img: h(4), t: {
       en: "Walk up the hill.",
       zh: "沿着坡道往上走。",
@@ -375,14 +379,18 @@ const ROUTES = {
       en: "You'll see a GS25 convenience store in front of you. Turn right here.",
       zh: "正前方会看到 GS25 便利店，在这里向右转。",
       ja: "正面にコンビニの GS25 が見えたら、右に曲がります。",
-      ko: "정면에 GS25 편의점이 보이면 오른쪽으로 갑니다." } },
+      ko: "정면에 GS25 편의점이 보이면 오른쪽으로 갑니다." }, note: {
+      en: "(GS25 opened after this photo was taken.)",
+      zh: "（拍这张照片时还没有 GS25。）",
+      ja: "（この写真の撮影時、GS25はまだありませんでした）",
+      ko: "(이 사진을 찍을 땐 GS25가 아직 없었어요)" } },
     { n: "9", img: h(9), t: {
       en: "Go straight, past the 한양세탁 laundry on your right.",
       zh: "直走，经过右边的洗衣店「한양세탁」。",
       ja: "まっすぐ進み、右手のクリーニング店「한양세탁」を通り過ぎます。",
       ko: "쭉 직진해 오른쪽 한양세탁을 지나갑니다." } },
     { n: "10", img: h(10), t: {
-      en: "Keep going — our gate is between the 가위소리 hair salon and the 미래쉐르빌 building (circled).",
+      en: "Keep going — the entrance to our alley is between the 가위소리 hair salon and the 미래쉐르빌 building (circled).",
       zh: "继续往前，美发店「가위소리」和「미래쉐르빌」大楼之间就是入口（圆圈处）。",
       ja: "さらに進むと、美容室「가위소리」と建物「미래쉐르빌」の間が入口です（丸印）。",
       ko: "조금 더 가면 가위소리미용실과 미래쉐르빌 사이가 입구입니다 (동그라미)." } },
@@ -443,6 +451,12 @@ function renderSteps() {
       const o = document.createElement("p");
       o.className = "other";
       o.textContent = t("otherDir");
+      txt.appendChild(o);
+    }
+    if (s.note) {
+      const o = document.createElement("p");
+      o.className = "other";
+      o.textContent = s.note[lang] || s.note.en;
       txt.appendChild(o);
     }
     head.append(badge, txt);

@@ -94,6 +94,16 @@
   .switch { display:block; width:100%; margin:12px 0 0; min-height:48px; border-radius:12px; border:1px solid var(--line); background:transparent; color:var(--ink); font:inherit; font-weight:700; cursor:pointer }
   footer { margin:28px 0 48px; color:var(--sub); font-size:13px }
   footer p { margin:4px 0 }
+  .deliv { margin-top:22px; scroll-margin-top:70px }
+  .deliv-title { font-weight:800; font-size:18px }
+  .deliv p { margin:4px 0 8px }
+  .drow { display:flex; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--line) }
+  .drow .txt { flex:1; min-width:0 }
+  .drow .k { font-size:12.5px; color:var(--sub) }
+  .drow .v { font-weight:700; font-size:16px; line-height:1.4 }
+  .cbtn { flex:none; min-height:40px; min-width:64px; padding:6px 12px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-size:13.5px; font-weight:700; cursor:pointer }
+  .cbtn:focus-visible { outline:2px solid var(--accent); outline-offset:2px }
+  .nw { white-space:nowrap }
 </style>
 </head>
 <body>
@@ -115,7 +125,7 @@
 
   <section class="addr card" aria-labelledby="addr-label">
     <div class="label" id="addr-label" data-t="addrLabel"></div>
-    <div class="ko-addr" lang="ko">서울시 성동구 왕십리로 21길 41-6</div>
+    <div class="ko-addr" lang="ko">서울시 성동구 왕십리로 <span class="nw">21길 41-6</span></div>
     <div class="ko-hint" lang="ko">가위소리미용실 옆 골목 안 철대문 · 우편번호 04714</div>
     <div class="roman" lang="en">41-6 Wangsimni-ro 21-gil, Seongdong-gu, Seoul 04714</div>
     <div class="btns">
@@ -158,6 +168,16 @@
     <button type="button" class="switch" id="switch" data-t="switch"></button>
   </section>
 
+  <section class="card deliv" id="delivery" aria-labelledby="deliv-title">
+    <div class="deliv-title" id="deliv-title" data-t="dTitle"></div>
+    <p class="sub" data-t="dLead"></p>
+    <div class="drow"><div class="txt"><div class="k" data-t="dAddr"></div><div class="v" lang="ko">서울시 성동구 왕십리로 <span class="nw">21길 41-6</span></div></div><button type="button" class="cbtn" data-copy="서울시 성동구 왕십리로 21길 41-6" data-t="copyShort"></button></div>
+    <div class="drow"><div class="txt"><div class="k" data-t="dDetail"></div><div class="v" lang="ko">코지스테이 (가위소리미용실 옆 골목 끝 철대문)</div></div><button type="button" class="cbtn" data-copy="코지스테이 (가위소리미용실 옆 골목 끝 철대문)" data-t="copyShort"></button></div>
+    <div class="drow"><div class="txt"><div class="k" data-t="dZip"></div><div class="v">04714</div></div><button type="button" class="cbtn" data-copy="04714" data-t="copyShort"></button></div>
+    <div class="drow"><div class="txt"><div class="k" data-t="dNote"></div><div class="v" lang="ko">철대문 앞에 두고 가 주세요</div></div><button type="button" class="cbtn" data-copy="철대문 앞에 두고 가 주세요" data-t="copyShort"></button></div>
+    <p class="sub" data-t="dGate"></p>
+  </section>
+
   <footer>
     <p data-t="help"></p>
     <p data-t="credit"></p>
@@ -191,7 +211,12 @@ const T = {
     help: "Questions? Message us on Airbnb anytime.",
     credit: "Photos: Kozy Stay · Route ② photos 1–10: Google Street View (© Google)",
     stepAlt: "Step {n}",
-    otherDir: "(This photo faces the other way, so the salon is on the left here. Coming from Haengdang, it's on your right.)"
+    otherDir: "(This photo faces the other way, so the salon is on the left here. Coming from Haengdang, it's on your right.)",
+    copyShort: "Copy",
+    dTitle: "📦 Ordering a delivery?",
+    dLead: "Enter these Korean lines in the app (food delivery, Coupang, parcels). Tap Copy for each one.",
+    dAddr: "Address", dDetail: "Detail address", dZip: "Postal code", dNote: "Delivery note",
+    dGate: "Drivers can't open our gate, so your order will be left in front of the steel gate at the end of the alley. Please pick it up there, and please don't write our door codes in the app."
   },
   zh: {
     docTitle: "Kozy Stay · 交通指南",
@@ -214,7 +239,12 @@ const T = {
     help: "有任何问题，请随时通过 Airbnb 消息联系我们。",
     credit: "照片：Kozy Stay · 路线②第1–10张：谷歌街景（© Google）",
     stepAlt: "第{n}步",
-    otherDir: "（这张照片是从反方向拍的，所以美发店在照片左边；从杏堂站过来时，它在你的右边。）"
+    otherDir: "（这张照片是从反方向拍的，所以美发店在照片左边；从杏堂站过来时，它在你的右边。）",
+    copyShort: "复制",
+    dTitle: "📦 要叫外卖或收快递？",
+    dLead: "在App里填写下面的韩文（外卖、Coupang、快递），点「复制」可逐行复制。",
+    dAddr: "地址", dDetail: "详细地址", dZip: "邮编", dNote: "配送备注",
+    dGate: "配送员无法打开大门，外卖或快递会放在巷子尽头的铁门前，请到那里领取。请不要在App里填写门锁密码。"
   },
   ja: {
     docTitle: "Kozy Stay · アクセス",
@@ -237,7 +267,12 @@ const T = {
     help: "ご不明な点は、いつでもAirbnbのメッセージでお問い合わせください。",
     credit: "写真：Kozy Stay・ルート②の1〜10：Googleストリートビュー（© Google）",
     stepAlt: "ステップ{n}",
-    otherDir: "（この写真は反対方向から撮ったので、美容室が左に写っています。杏堂駅から来ると右側です）"
+    otherDir: "（この写真は反対方向から撮ったので、美容室が左に写っています。杏堂駅から来ると右側です）",
+    copyShort: "コピー",
+    dTitle: "📦 デリバリー・宅配を頼むとき",
+    dLead: "アプリ（フードデリバリー、Coupang、宅配）には下の韓国語をそのまま入力してください。「コピー」で1行ずつコピーできます。",
+    dAddr: "住所", dDetail: "詳細住所", dZip: "郵便番号", dNote: "配達メモ",
+    dGate: "配達員は門を開けられないため、路地の突き当たりの鉄の門の前に置いていきます。そこで受け取ってください。アプリにドアの暗証番号は書かないでください。"
   },
   ko: {
     docTitle: "코지스테이 · 찾아오는 길",
@@ -260,7 +295,12 @@ const T = {
     help: "궁금한 점은 언제든 에어비앤비 메시지로 물어보세요.",
     credit: "사진: 코지스테이 · ②의 1~10번: 구글 거리뷰 (© Google)",
     stepAlt: "{n}단계",
-    otherDir: "(이 사진은 반대 방향에서 찍어서 미용실이 왼쪽에 보여요. 행당역에서 오면 오른쪽에 있습니다)"
+    otherDir: "(이 사진은 반대 방향에서 찍어서 미용실이 왼쪽에 보여요. 행당역에서 오면 오른쪽에 있습니다)",
+    copyShort: "복사",
+    dTitle: "📦 배달·택배 시킬 때",
+    dLead: "배달앱·쿠팡 등에 아래 내용을 그대로 넣으세요. '복사'를 누르면 한 줄씩 복사됩니다.",
+    dAddr: "주소", dDetail: "상세주소", dZip: "우편번호", dNote: "요청사항",
+    dGate: "배달 기사님은 대문을 열 수 없어서 골목 끝 철대문 앞에 두고 갑니다. 거기서 받아 가시고, 배달앱에 출입 비밀번호는 적지 마세요."
   }
 };
 
@@ -510,24 +550,38 @@ $("#switch").addEventListener("click", () => {
   setRoute(route === "w" ? "h" : "w");
   $("#choose").scrollIntoView({ behavior: "smooth", block: "start" });
 });
-window.addEventListener("hashchange", () => setRoute(location.hash === "#haengdang" ? "h" : "w"));
+window.addEventListener("hashchange", () => {
+  if (location.hash === "#haengdang" || location.hash === "#wangsimni") setRoute(location.hash === "#haengdang" ? "h" : "w");
+});
 
-$("#copy").addEventListener("click", async () => {
-  let ok = false;
-  try { await navigator.clipboard.writeText(ADDR_KO); ok = true; } catch (e) {
+async function copyText(s) {
+  try { await navigator.clipboard.writeText(s); return true; } catch (e) {
     const ta = document.createElement("textarea");
-    ta.value = ADDR_KO; ta.setAttribute("readonly", "");
+    ta.value = s; ta.setAttribute("readonly", "");
     ta.style.cssText = "position:fixed;top:0;left:0;opacity:0";
     document.body.appendChild(ta); ta.select();
+    let ok = false;
     try { ok = document.execCommand("copy"); } catch (_) {}
     ta.remove();
+    return ok;
   }
+}
+
+$("#copy").addEventListener("click", async () => {
+  const ok = await copyText(ADDR_KO);
   const span = $("#copy span");
   span.textContent = ok ? t("copied") : t("copy");
   if (ok) setTimeout(() => { span.textContent = t("copy"); }, 1800);
 });
 
+document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+  if (!(await copyText(b.dataset.copy))) return;
+  b.textContent = t("copied");
+  setTimeout(() => { b.textContent = t("copyShort"); }, 1800);
+}));
+
 applyLang();
+if (location.hash === "#delivery") { const d = document.getElementById("delivery"); if (d) d.scrollIntoView(); }
 </script>
 </body>
 </html>
